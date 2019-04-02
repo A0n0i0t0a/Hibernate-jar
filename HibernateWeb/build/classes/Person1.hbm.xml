@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 25, 2019 12:07:00 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.niit.hiber.Person1" table="PERSON1">
+        <id name="personId" type="java.lang.Long">
+            <column name="PERSONID" />
+            <generator class="increment" />
+        </id>
+        <discriminator column="DISCRIMINATOR" type="string"/>
+        
+        <property name="firstname" type="java.lang.String">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastname" type="java.lang.String">
+            <column name="LASTNAME" />
+        </property>
+        
+        <subclass name="com.niit.hiber.Employee1" extends="Person1" discriminator-value="E">
+           <property name="departmentName" column="department_Name"/>
+             <property name="joiningDate" type="date" column="joining_Date"/>
+             </subclass>
+       
+    </class>
+</hibernate-mapping>

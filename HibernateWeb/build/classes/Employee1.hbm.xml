@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 25, 2019 12:07:00 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <joined-subclass name="com.niit.hiber.Employee1" extends="com.niit.hiber.Person1" table="EMPLOYEE1" lazy="false">
+        <key>
+            <column name="PERSONID" />
+        </key>
+        <property name="joiningDate" type="java.sql.Date">
+            <column name="JOININGDATE" />
+        </property>
+        <property name="departmentName" type="java.lang.String">
+            <column name="DEPARTMENTNAME" />
+        </property>
+    </joined-subclass>
+</hibernate-mapping>
